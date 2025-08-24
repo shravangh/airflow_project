@@ -1,0 +1,23 @@
+Summary of Transformation Logic Applied:
+
+1. AvgChargesPerMonth:
+   - Computed as TotalCharges / tenure (avoiding division by zero).
+   - Represents the average charges per customer per month.
+
+2. ExtraCharges:
+   - Difference between TotalCharges and (MonthlyCharges * tenure).
+   - Captures any extra/unexpected charges compared to expected billing.
+
+3. LifetimeValue:
+   - tenure * MonthlyCharges.
+   - A proxy for the customer's total lifetime value to the company.
+
+4. Tenure_Charges_Interaction:
+   - tenure * (MonthlyCharges / 100).
+   - Captures the interaction between tenure and monthly charges, scaled down.
+
+5. All engineered features are rounded to 2 decimal places.
+
+The transformed dataset is then stored in SQLite database:
+- Database file: customer_db.sqlite
+- Table name: processed_data

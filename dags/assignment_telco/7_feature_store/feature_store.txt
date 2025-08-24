@@ -1,0 +1,7 @@
+uvicorn feature_store_api:app --reload --port 8000
+
+http://127.0.0.1:8000/features/7590-VHVEG
+
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/features" -Method Post -Body '["7590-VHVEG","5575-GNVDE"]' -ContentType "application/json"
+
+http://127.0.0.1:8000/features_bulk?ids=7590-VHVEG,5575-GNVDE
